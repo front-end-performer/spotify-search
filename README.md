@@ -14,4 +14,4 @@ node .
 ```
 ## Features
 * Search artists, albums
-* By click on result, redirects to the spotify page of the artist
+* By click on the result, it redirects to the spotify page of the artist
