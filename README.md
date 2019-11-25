@@ -10,7 +10,6 @@ HTML, CSS, JavaScript / jQuery, Spotify API, AJAX, JSON
 
 ```bash
 npm install
-node .
 ```
 ## Features
 * Search artists, albums
