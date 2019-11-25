@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<title>Spotify Search AJAX</title>
+	</head>
+	<body>
+		<button id="btn">CHANGE BG COLOR</button>
+		<div class="container">
+			<section class="search_bar">
+				<img
+					width="40"
+					height="40"
+					src="./assets/yfitops.png"
+					alt="img"
+				/>
+				<div class="form">
+					<input
+						name="user-input"
+						type="text"
+						placeholder="find your favorite!"
+					/>
+					<select class="artist-or-album" aria-placeholder="choose">
+						<option id="artist">artist</option>
+						<option id="album">album</option>
+					</select>
+					<button class="submit-button">submit</button>
+				</div>
+			</section>
+
+			<div class="search_for-container">
+				<p id="input_val-show"></p>
+			</div>
+			<div class="results-container"></div>
+			<button class="btn">more</button>
+			<p id="loading">
+				<img src="./assets/giphy.gif" alt="Loading…" />
+			</p>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

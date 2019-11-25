@@ -1,0 +1,136 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f8f9f7;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	color: #7fd9c0;
+	font-size: 14px;
+}
+
+a {
+	width: 20%;
+	max-width: 100%;
+}
+
+.search_bar {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.search_bar > img {
+	margin: 0 10px;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.form {
+	width: 100%;
+	display: inline-block;
+}
+
+input[type="text"] {
+	border: solid 1px #eee8aa;
+	border-radius: 2px;
+	box-sizing: border-box;
+	font-size: 1em;
+	height: 1.6em;
+	outline: solid #48d1cc 1px;
+	padding: 0.5em;
+	transition: all 2s ease-in;
+	width: 30vw;
+	z-index: 1;
+	color: #2f394d;
+}
+
+input::placeholder {
+	color: #eee8aa;
+}
+
+select::-ms-expand {
+	display: none;
+}
+select {
+	display: inline-block;
+	margin: 0 40px;
+	box-sizing: border-box;
+	background-color: #eee8aa;
+	padding: 0.5em 4em 0.5em 0.5em;
+	border-radius: 2px;
+	align-self: center;
+	line-height: inherit;
+	border: 1px solid #48d1cc;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+		linear-gradient(135deg, currentColor 50%, transparent 50%);
+	background-position: right 15px top 1em, right 10px top 1em;
+	background-size: 5px 5px, 5px 5px;
+}
+
+.submit-button {
+	outline: none;
+	border-radius: 2px;
+	padding: 0.5em 45px;
+	align-self: center;
+	border: 1px solid #48d1cc;
+	background-color: #eee8aa;
+}
+
+.search_for-container {
+	display: flex;
+	padding-left: 0.5em;
+}
+
+.search_for-container p:last-child {
+	margin-left: 40px;
+	font-size: 21px;
+	color: #7fd9c0;
+}
+
+.result_box:hover {
+	box-shadow: 1px 2px 3px #c8e2b1;
+	transition: box-shadow 0.1s;
+}
+
+.result_box {
+	width: 50%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+	opacity: 0.4;
+}
+
+.result_box h3 {
+	margin-left: 40px;
+}
+
+.artist_img {
+	width: 100%;
+	height: auto;
+	border-radius: 2px;
+}
+
+#loading {
+	display: none;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+#loading > img {
+	width: 80px;
+	height: 80px;
+}
