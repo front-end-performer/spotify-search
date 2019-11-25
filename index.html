@@ -5,6 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link
+			rel="icon"
+			type="image/png"
+			href="https://cdn3.iconfinder.com/data/icons/stars-5/512/gold_star-512.png"
+		/>
+		<link
 			href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap"
 			rel="stylesheet"
 		/>
@@ -12,9 +17,8 @@
 		<title>Spotify Search AJAX</title>
 	</head>
 	<body>
-		<button id="btn">CHANGE BG COLOR</button>
 		<div class="container">
-			<section class="search_bar">
+			<div class="search_bar">
 				<img
 					width="40"
 					height="40"
@@ -33,13 +37,16 @@
 					</select>
 					<button class="submit-button">submit</button>
 				</div>
-			</section>
+			</div>
 
-			<div class="search_for-container">
+			<div class="search_for-container hidden">
 				<p id="input_val-show"></p>
 			</div>
-			<div class="results-container"></div>
-			<button class="btn">more</button>
+
+			<div class="results-container hidden"></div>
+
+			<!-- <button class="btn">more</button> -->
+
 			<p id="loading">
 				<img src="./assets/giphy.gif" alt="Loading…" />
 			</p>

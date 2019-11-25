@@ -2,25 +2,10 @@
     var results = $('.results-container');
     var moreBtn = $('.btn').hide();
     var nextUrl;
-    var body = $('body');
-    var btn = $('#btn');
-
-    function getRandomColorNumber() {
-        return Math.floor(Math.random() * 256);
-    }
-
-    btn.on('click', (c) => {
-        var r = getRandomColorNumber();
-        var g = getRandomColorNumber();
-        var b = getRandomColorNumber();
-        var randomColor = "rgb(" + r + "," + g + "," + b + ")";
-        body.css({
-            backgroundColor: randomColor
-        });
-    });
+    var searchContainer = $('.search_for-container');
+    var resultsContainer = $('.results-container');
 
     $('.submit-button').on('click', submitFn);
-
     function submitFn() {
         var userInput = $('input[name="user-input"]').val();
         var dropDown = $('.artist-or-album').val();
@@ -38,7 +23,6 @@
                 },
                 success: submitSuccess
             });
-
             function submitSuccess(payload) {
                 payload = payload.artists || payload.albums;
 
@@ -48,12 +32,21 @@
                 targetSearchMessage.html(resultFor);
 
                 if (payload.items.length) {
+                    console.log(payload.items.length);
                     var artistBlock = '';
                     var imgUrl = "http://dudespaper.com/wp-content/uploads/2008/12/lebowskirecordalbum1.jpg";
 
                     for (var i = 0; i < payload.items.length; i++) {
+
                         if (payload.items[i].images.length > 0) {
                             artistBlock += '<div class="result_box"><a href="' + payload.items[i].external_urls.spotify + '"><img class="artist_img" src="' + payload.items[i].images[0].url + '" alt="img_artist" /></a><h3>' + payload.items[i].name + '</h3></div>';
+                            searchContainer.css({
+                                display: 'block'
+                            });
+                            resultsContainer.css({
+                                display: 'flex',
+                                flexDirection: 'column'
+                            });
                         } else {
                             artistBlock += '<div class="result_box"><a href="' + payload.items[i].external_urls.spotify + '"><img class="artist_img" src="' + imgUrl + '" alt="img_artist" /></a><h3>' + payload.items[i].name + '</h3></div>';
                         }
@@ -84,9 +77,9 @@
         }
     }
 
-    moreBtn.on('click', moreSubmit);
+    moreBtn.on('click', moreSubmit); // more submit btn event listener
 
-    function moreSubmit() {
+    function moreSubmit() { // more submit btn
         var baseUrl = 'https://elegant-croissant.glitch.me/spotify';
 
         $.ajax({
@@ -137,8 +130,9 @@
     }
 
     function infiniteScroll() {
-        if ($(window).height() + $(window).scrollTop() >= $(document).height()) {
-            if (location.search.indexOf('scroll=infinite') == 1) {
+
+        if ($(window).height() + $(document).scrollTop() >= $(document).height()) {
+            if (location.search.indexOf('scroll=infinite') === -1) {
                 console.log('true', location.search.indexOf('scroll=infinite'));
                 moreBtn.trigger('click');
                 moreBtn.hide();
@@ -150,9 +144,8 @@
 
     function startLoading() {
         $('.result_box').animate({
-            width: '100%',
-            opacity: '1',
-            margin: '40px 0'
+            width: '50%',
+            opacity: '1'
         }, 1500);
         $('#loading').fadeIn(100);
     }
@@ -160,8 +153,7 @@
     function stopLoading() {
         $('.result_box').css({
             width: '60%',
-            opacity: '1',
-            margin: '40px 0'
+            opacity: '1'
         });
         $('#loading img').css({
             display: 'none'
